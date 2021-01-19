@@ -95,15 +95,11 @@ public class NeuralNet {
 			output[i] += b2[i];
 //			output[i] = sigmoid(output[i]);
 
-//			double[] a = new double[]{};
-//			for (int j=0; j<a.length; j++){
-//				a[j] = output[j];
-//			}
-
+			// ソフトマックス関数の実装
 			double[] result = softmax(output);
 			output[i] = result[i];
 
-			// ソフトマックス関数の実装
+			// ソフトマックス関数の実装(ND4J)
 			//INDArray a = Nd4j.create(new double[] {output[i]});
 			//output = softmax(a);
 
@@ -127,6 +123,7 @@ public class NeuralNet {
 
 // ⑧誤差伝搬 中間層 実装例は活性化関数をシグモイドで実装している
 
+//  ND4J
 //	public double[] softmax(INDArray x) {
 //
 //		// 指数関数
